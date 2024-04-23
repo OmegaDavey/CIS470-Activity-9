@@ -22,13 +22,10 @@ jest.mock('../modules/getNextDate'.getNextDate, () => ({
 // Stub function for getPreviousDate
 // jest.mock('../modules/getPreviousDate'.getPreviousDate, () => ({
 // ..
-
-
-
-
-// Stub function for getDayOfWeek
-jest.mock('../modules/getDayOfWeek'.getDayOfWeek, () => ({
-  getDayOfWeek: jest.fn().mockReturnValue('Wednesday') // Mocked output for Wednesday (4/17/2024)
+jest.mock('../modules/getPreviousDate'.getPreviousDate, () => ({
+  getPreviousDate: jest.fn().mockImplementation((month, day, year) => {
+    return { month: 4, day: 16, year: 2024 }; // Mocked output for 4/16/2024
+  })
 }));
 
 // Stub function for getZodiacSign
